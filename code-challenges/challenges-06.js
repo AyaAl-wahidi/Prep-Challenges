@@ -10,7 +10,7 @@
 // Input: [12, 32, 22, 45, 78, 12, 50]
 // Output: 78
 //  
-20, 31, 15, 41, 20, 48
+
 const findMax = (arr) => {
     let max_value = arr[0];
     for (let i = 0 ; i < arr.length ; i++) {
@@ -56,11 +56,11 @@ const sumNums = (arr) => {
 // Input: ['C#', 'JS', 'Ruby','Python'] 
 // Output: ['Python','Ruby','JS','C#']
 
-let revArray =[];
 
 const reverseArray = (arr) => {
+    let revArray =[];
     for (let i = 0 ; i < arr.length ; i++) {
-        revArray.unshift(arr[i])
+        revArray.unshift(arr[i]);
     }
     return revArray;
 }
