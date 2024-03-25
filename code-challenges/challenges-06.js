@@ -60,7 +60,7 @@ const sumNums = (arr) => {
 const reverseArray = (arr) => {
     let revArray =[];
     for (let i = 0 ; i < arr.length ; i++) {
-        revArray.unshift(arr[i]);
+        revArray[i] = arr[arrLength-1-i]
     }
     return revArray;
 }
