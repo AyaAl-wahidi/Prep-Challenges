@@ -61,7 +61,12 @@ const customerAndAge = (obj) => {
 // You can solve this challenge by using Object.entries
 
 const getEntries = (obj) => {
-  // write your code here
+  let repArray = [];
+  for (const key in obj) {
+    // For each property in the object, I created a string in this format "key: value"
+    repArray.push(`${key}: ${obj[key]}`)
+  }
+  return repArray;
 };
 // -------------------------------------------------------------------------------------------------------
 
