@@ -28,7 +28,6 @@
 
 const customerAndAge = (obj) => {
   let result = [];
-
   for (const name in obj) {
       let age = obj[name];
       let formattedString = `Customer Name :${name} , Age :${age}`;
@@ -61,7 +60,11 @@ const customerAndAge = (obj) => {
 // You can solve this challenge by using Object.entries
 
 const getEntries = (obj) => {
-  // write your code here
+  let arr = [];
+  for (const key in obj) {
+    arr.push(`${key}: ${obj[key]}`);
+  }
+  return arr;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -103,8 +106,12 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
-  // write your code here
-
+  for (const key of arr) {
+    coursesName.push(key.course);
+  }
+    for (const key of arr) {
+      studentsName = studentsName.concat(key.Students);
+    }
   return { coursesName, studentsName };
 };
 // -------------------------------------------------------------------------------------------------------

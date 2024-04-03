@@ -135,6 +135,7 @@ const cvFormatter = (arr) => {
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
 const applicationsStatics = (arr) => {
+
     let result;
     let jsCounter = 0;
     let pythonCounter = 0;
