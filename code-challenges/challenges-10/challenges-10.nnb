@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function migratoryBirds(arr) {\n    let mostFreqBird = 0;\n    let obj = {};\n    let max = 0;\n    arr.forEach ((key) => {\n        obj[key] = (obj[key] || 0) +1;\n    })\n    for(let i in obj){\n        if(obj[i] > max){\n        max = obj[i];\n        mostFreqBird = i;\n    }else if(obj[i] === max && i < mostFreqBird){\n        mostFreqBird = i;\n    }}\n    return parseInt(mostFreqBird);\n}"
             ],
             "outputs": []
         }
