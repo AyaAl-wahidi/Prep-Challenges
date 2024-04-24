@@ -135,41 +135,42 @@ const cvFormatter = (arr) => {
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
 const applicationsStatics = (arr) => {
-        let result;
-        let jsCounter = 0;
-        let pythonCounter = 0;
-        let javaCounter = 0;
-        let netCounter = 0;
-        let totalApps = 0;
-        let rejectedApps = 0;
-    
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].yearsOfExperience > 1 && (arr[i].firstName === null || arr[i].lastName === null)) {
-                if (arr[i].tech === ".Net") {
-                    netCounter ++;
-                } else if (arr[i].tech === "Python") {
-                    pythonCounter ++;
-                } else if (arr[i].tech === "Java") {
-                    javaCounter ++;
-                } else if (arr[i].tech === "JS") {
-                    jsCounter ++;
-                }
-                totalApps ++;
-            } else {
-                rejectedApps ++;
+
+    let result;
+    let jsCounter = 0;
+    let pythonCounter = 0;
+    let javaCounter = 0;
+    let netCounter = 0;
+    let totalApps = 0;
+    let rejectedApps = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].yearsOfExperience > 1 && (arr[i].firstName === null || arr[i].lastName === null)) {
+            if (arr[i].tech === ".Net") {
+                netCounter ++;
+            } else if (arr[i].tech === "Python") {
+                pythonCounter ++;
+            } else if (arr[i].tech === "Java") {
+                javaCounter ++;
+            } else if (arr[i].tech === "JS") {
+                jsCounter ++;
             }
+            totalApps ++;
+        } else {
+            rejectedApps ++;
         }
-    
-        result = {
-            python_devs: pythonCounter,
-            javaScript_devs: jsCounter,
-            dotNet_devs: netCounter,
-            java_devs: javaCounter,
-            totalApplicants: totalApps,
-            rejectedApplicants: rejectedApps,
-        };
-        return result;
+    }
+
+    result = {
+        python_devs: pythonCounter,
+        javaScript_devs: jsCounter,
+        dotNet_devs: netCounter,
+        java_devs: javaCounter,
+        totalApplicants: totalApps,
+        rejectedApplicants: rejectedApps,
     };
+    return result;
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -295,22 +296,21 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
-
-        function calAvg(classScores) {
-            let sum = 0;
-            let avg = 0;
-            for (let i; i < classScores.length; i++) {
-                sum += classScores[i];
-            }
-            return avg = sum / classScores.length;
+    function calAvg(classScores) {
+        let sum = 0;
+        let avg = 0;
+        for (let i; i < classScores.length; i++) {
+            sum += classScores[i];
         }
-        for (let i = 0; i < data.grades.length; i++) {
-            for (let j = 0; j < data.grades[i].classes.length; j++) {
-                data.grades[i].classes[j].avg = Math.floor(calAvg(data.grades[i].classes[j].classScores));
-            }
+        return avg = sum / classScores.length;
+    }
+    for (let i = 0; i < data.grades.length; i++) {
+        for (let j = 0; j < data.grades[i].classes.length; j++) {
+            data.grades[i].classes[j].avg = Math.floor(calAvg(data.grades[i].classes[j].classScores));
         }
-        return data;
-    };
+    }
+    return data;
+};
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };

@@ -27,12 +27,15 @@
 // ["Customer Name :Romio Joliat , Age :35", "Customer Name :Mario Ristrova , Age :39", ... ]
 
 const customerAndAge = (obj) => {
-  let arr = [];
-  for (const key in obj) {
-    arr.push(`Customer Name :${key} , Age :${obj[key]}`);
+  let result = [];
+  for (const name in obj) {
+      let age = obj[name];
+      let formattedString = `Customer Name :${name} , Age :${age}`;
+      result.push(formattedString);
   }
-  return arr;
-};
+
+  return result;
+}
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -103,14 +106,12 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
-
   for (const key of arr) {
     coursesName.push(key.course);
   }
     for (const key of arr) {
       studentsName = studentsName.concat(key.Students);
     }
-  
   return { coursesName, studentsName };
 };
 // -------------------------------------------------------------------------------------------------------

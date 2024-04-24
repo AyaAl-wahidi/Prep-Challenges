@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function birthdayCakeCandles(candles) {\n    let max = Math.max(...candles);\n    let counter = 0;\n    for (let i = 0 ; i < candles.length ; i++){\n        if(candles[i] == max){\n            counter++;\n        }\n    }\n    return counter;\n}"
+                "function birthdayCakeCandles(candles) {\n\n    let maxCandle = Math.max(...candles);\n    let counter = 0;\n  \n    candles.forEach(element => {\n      if (element == maxCandle)\n      counter += 1;\n    });\n    return counter;\n  }"
             ],
             "outputs": []
         },
@@ -45,7 +45,7 @@
         {
             "language": "javascript",
             "source": [
-                "function compareTriplets(a, b) {\n    let pointArr = [0, 0];\n    let countA = 0, countB = 0;\n    for (let i = 0; i < a.length; i++) {\n        if (a[i] > b[i]) {\n            countA++;\n        } else if (a[i] < b[i]) {\n            countB++;\n        }else if (a[i] == b[i]) {          \n        }\n    }\n    pointArr = [countA, countB];\n    return pointArr;\n}"
+                "function compareTriplets(a, b) {\n    const arr = [0, 0];\n    for (let i = 0; i < a.length; i++) {\n      if (a[i] > b[i]) {\n        arr[0] += 1;\n      }\n      else if (a[i] < b[i]) {\n        arr[1] += 1;\n      }\n    }\n      return arr;\n  }"
             ],
             "outputs": []
         },
@@ -59,7 +59,9 @@
         {
             "language": "javascript",
             "source": [
-                "function migratoryBirds(arr) {\n    let mostFreqBird = 0;\n    let obj = {};\n    let max = 0;\n    arr.forEach ((key) => {\n        obj[key] = (obj[key] || 0) +1;\n    })\n    for(let i in obj){\n        if(obj[i] > max){\n        max = obj[i];\n        mostFreqBird = i;\n    }else if(obj[i] === max && i < mostFreqBird){\n        mostFreqBird = i;\n    }}\n    return parseInt(mostFreqBird);\n}"
+
+                "function migratoryBirds(arr) {\n    let birdCount = {};\n    arr.forEach((bird) => {\n        birdCount[bird] = (birdCount[bird] || 0) + 1;\n    });\n    let maxCount = 0;\n    let mostFrequentBird = 0;\n  \n    for (const bird in birdCount) {\n        if (birdCount[bird] > maxCount) {\n            maxCount = birdCount[bird];\n            mostFrequentBird = bird;\n        }\n        else if (birdCount[bird] === maxCount && bird < mostFrequentBird) {\n            mostFrequentBird = bird;\n        }\n  \n    }\n    return parseInt(mostFrequentBird);\n  }"
+
             ],
             "outputs": []
         }
