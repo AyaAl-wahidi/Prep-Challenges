@@ -57,12 +57,14 @@ const sumNums = (arr) => {
 // Output: ['Python','Ruby','JS','C#']
 
 
-const reverseArray = (arr) => {
-    let revArray =[];
-    for (let i = 0 ; i < arr.length ; i++) {
-        revArray[i] = arr[arrLength-1-i]
+const reverseArray = (arr)=>{
+    let rearr = [];
+    let j = 0;
+    for (let i = arr.length-1  ; i >= 0; i--){
+        rearr[j] = arr[i];
+        j++;
     }
-    return revArray;
+    return rearr;
 }
 
 // -------------------------------------------------------------------------------------------------------
