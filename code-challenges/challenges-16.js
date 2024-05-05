@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Combine methods
 
 // -------------------------------------------------------------------------------------------------------
@@ -13,7 +12,7 @@
 // Output => "olleH";
 
 const reverseString = (string) => {
-    //write your code here ...
+    return string.split("").reverse().join("");
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -29,7 +28,7 @@ const reverseString = (string) => {
 // Input <= ["hello ^_^ ","Hi ^_^" ,"What's up ^_-" ,"lol"] , Output => ["hello ^_^ ","Hi ^_^" ] ;
 
 const detectFace = (arr) => {
-    //write your code here ...
+    return arr.filter(key => key.includes("^_^"));
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -44,7 +43,14 @@ const detectFace = (arr) => {
 // Input <= "coding" output =>"cdn"
 
 const eveCharacter = (str) => {
-    //write your code here ...
+    let newStr = "";
+    let str1 = str.split("")
+    str1.forEach(element => {
+        if (str1.indexOf(element) % 2 === 0){
+            newStr += "" + element;
+        }
+    });
+    return newStr;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -65,7 +71,12 @@ const eveCharacter = (str) => {
 
 
 const chickenGradients = (arr) => {
-    //write your code here ...
+
+    let result =  arr.map(element => {
+          return element.filter(e => e.includes("chicken")) 
+      });
+    return result;
+
 }
 // -------------------------------------------------------------------------------------------------------
 
