@@ -71,10 +71,12 @@ const eveCharacter = (str) => {
 
 
 const chickenGradients = (arr) => {
+
     let result =  arr.map(element => {
           return element.filter(e => e.includes("chicken")) 
       });
     return result;
+
 }
 // -------------------------------------------------------------------------------------------------------
 
